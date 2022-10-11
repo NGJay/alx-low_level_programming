@@ -1,6 +1,6 @@
 #include "dog.h"
 #include <stdio.h>
-#include <stdlib>
+#include <stdlib.h>
 
 /**
  * print_dog - Prints a struct dog.
@@ -24,4 +24,3 @@ void print_dog(struct dog *d)
 	else
 		printf("Owner: %s\n", d->owner);
 }
-
