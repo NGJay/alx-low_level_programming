@@ -3,8 +3,7 @@
 
 /**
  * get_op_func - selects the correct function to perform
- * the operation asked by the user. You’re not allowed
- * to declare any other function.
+ * the operation asked by the user.
  * @s: operator passed as argument
  *
  * Return: A pointer to the function corresponding to
@@ -20,11 +19,16 @@ int (*get_op_func(char *s))(int, int)
 		{"%", op_mod},
 		{NULL, NULL}
 	};
-	int i = 0;
+	int i;
 
-	while (ops[i].op != NULL && *(ops[i].op) != *s)
-		i++;
+	i = 0;
 
+	while (ops[i].op)
+	{
+		if (strcmp(ops[i].op, s) == 0)
 			return (ops[i].f);
+		i++;
+	}
 
+	return (NULL);
 }
